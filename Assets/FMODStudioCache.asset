@@ -12,89 +12,15 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 114384902243511532}
-  - {fileID: 114682273832204170}
+  - {fileID: 114870270055559840}
+  - {fileID: 114575978796328498}
   EditorEvents:
-  - {fileID: 114922684706344680}
-  MasterBankRef: {fileID: 114682273832204170}
-  StringsBankRef: {fileID: 114384902243511532}
-  stringsBankWriteTime: 636433294913731182
+  - {fileID: 114465126489073228}
+  MasterBankRef: {fileID: 114575978796328498}
+  StringsBankRef: {fileID: 114870270055559840}
+  stringsBankWriteTime: 636434052792155212
   cacheVersion: 2
---- !u!114 &114384902243511532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: Assets\FMOD Audio\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636433294913731182
-  LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 714
-  Exists: 1
---- !u!114 &114490982997080672
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: N:\My Documents\Research Placement\Audio Game\Assets\FMOD Audio\Build\Desktop\Master
-    Bank.bank
-  lastModified: 636433194949083945
-  LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 12474
-  Exists: 1
---- !u!114 &114587000941894910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: Assets\FMOD Audio\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636433194949552792
-  LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 672
-  Exists: 1
---- !u!114 &114682273832204170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: N:\My Documents\Research Placement\Audio Game\Assets\FMOD Audio\Build\Desktop\Master
-    Bank.bank
-  lastModified: 636433294913262189
-  LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 1245312
-  Exists: 1
---- !u!114 &114922684706344680
+--- !u!114 &114465126489073228
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -106,12 +32,49 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: event:/Wind
-  guid: 00ae16e575ff2441a30f5562e64071a7
+  guid: b15d9186a6a1934ba60adf97fd28f9bf
   Banks:
-  - {fileID: 114682273832204170}
+  - {fileID: 114575978796328498}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
+--- !u!114 &114575978796328498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: N:\My Documents\Research Placement\Audio Game\Assets\FMOD Audio\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636434052791843404
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1245312
+  Exists: 1
+--- !u!114 &114870270055559840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: Assets\FMOD Audio\Build\Desktop\Master Bank.strings.bank
+  lastModified: 636434052792155212
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 714
+  Exists: 1
