@@ -16,10 +16,54 @@ MonoBehaviour:
   - {fileID: 114575978796328498}
   EditorEvents:
   - {fileID: 114465126489073228}
+  - {fileID: 114293318577243118}
+  - {fileID: 114112656163669688}
   MasterBankRef: {fileID: 114575978796328498}
   StringsBankRef: {fileID: 114870270055559840}
-  stringsBankWriteTime: 636434133042036742
+  stringsBankWriteTime: 636435030847212794
   cacheVersion: 2
+--- !u!114 &114112656163669688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: snapshot:/New Snapshot
+  guid: 06b71abdb77a284398769ca85d0aa725
+  Banks:
+  - {fileID: 114575978796328498}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+--- !u!114 &114293318577243118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Talking
+  guid: ebbd59bb48b3a74581b39850e7cf9edc
+  Banks:
+  - {fileID: 114575978796328498}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
 --- !u!114 &114465126489073228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54,11 +98,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: N:\My Documents\Research Placement\Audio Game\Assets\FMOD Audio\Build\Desktop\Master
     Bank.bank
-  lastModified: 636434133041568002
+  lastModified: 636435030846744022
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1245440
+    Value: 1979328
   Exists: 1
 --- !u!114 &114870270055559840
 MonoBehaviour:
@@ -72,9 +116,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\FMOD Audio\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636434133042036742
+  lastModified: 636435030847212794
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 714
+    Value: 818
   Exists: 1
