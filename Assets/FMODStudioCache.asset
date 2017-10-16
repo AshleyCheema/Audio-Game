@@ -20,7 +20,7 @@ MonoBehaviour:
   - {fileID: 114112656163669688}
   MasterBankRef: {fileID: 114575978796328498}
   StringsBankRef: {fileID: 114870270055559840}
-  stringsBankWriteTime: 636435030847212794
+  stringsBankWriteTime: 636437474762566575
   cacheVersion: 2
 --- !u!114 &114112656163669688
 MonoBehaviour:
@@ -63,7 +63,7 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 30
 --- !u!114 &114465126489073228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: N:\My Documents\Research Placement\Audio Game\Assets\FMOD Audio\Build\Desktop\Master
     Bank.bank
-  lastModified: 636435030846744022
+  lastModified: 636437474762254108
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\FMOD Audio\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636435030847212794
+  lastModified: 636437474762566575
   LoadResult: 0
   FileSizes:
   - Name: Desktop
