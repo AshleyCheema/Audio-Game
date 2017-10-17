@@ -10,11 +10,11 @@ public class PostProcessing : MonoBehaviour
     // Creates a private material used to the effect
     void Awake()
     {
-        material = new Material(Shader.Find("Hidden/FilmShader"));
-    }
+		material = new Material(Shader.Find("Hidden/FilmShader"));
+	}
 
-    // Postprocess the image
-    void OnRenderImage(RenderTexture source, RenderTexture destination)
+	// Postprocess the image
+	void OnRenderImage(RenderTexture source, RenderTexture destination)
     {
         if (intensity == 0)
         {
