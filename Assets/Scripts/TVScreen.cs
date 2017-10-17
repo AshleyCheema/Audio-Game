@@ -50,7 +50,7 @@ public class TVScreen : MonoBehaviour
 	{
 		mat = new Material( Shader.Find( "Custom/TVCRTShader" ) );
 
-		GetComponent<MeshRenderer>().material = mat;
+		GetComponent<MeshRenderer>().sharedMaterial = mat;
 
 		InitPropertyIDs();
 		OnValidate();

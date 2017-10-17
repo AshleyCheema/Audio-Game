@@ -373,33 +373,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 188605013}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!84 &202214456
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_Width: 782
-  m_Height: 558
-  m_AntiAliasing: 1
-  m_DepthFormat: 2
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 0
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
 --- !u!1 &212987390
 GameObject:
   m_ObjectHideFlags: 0
@@ -1226,6 +1199,51 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &995966381
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Custom/TVCRTShader (Instance)
+  m_Shader: {fileID: 4800000, guid: 2679e309e5706b94aaba8c8f0fa96546, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _DisplacementTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _LineTex:
+        m_Texture: {fileID: 2800000, guid: 0fc28e7ebdf0ae743973deece69ae863, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 1720717776}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex:
+        m_Texture: {fileID: 2800000, guid: 0b5420a30d93d444f895d35dd3575282, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _VignetteTex:
+        m_Texture: {fileID: 2800000, guid: 00a7e139e9beb9f4b8fe72f63ca78ed9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _DistortionSrength: 3
+    - _NoiseXSpeed: 10
+    - _NoiseYSpeed: 10
+    - _Strength: 0
+    m_Colors:
+    - _LineColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1007440150
 GameObject:
   m_ObjectHideFlags: 0
@@ -1341,51 +1359,6 @@ Transform:
   m_Father: {fileID: 1659680154}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &1107613036
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Custom/TVCRTShader (Instance)
-  m_Shader: {fileID: 4800000, guid: 2679e309e5706b94aaba8c8f0fa96546, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _DisplacementTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _LineTex:
-        m_Texture: {fileID: 2800000, guid: 0fc28e7ebdf0ae743973deece69ae863, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 202214456}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _NoiseTex:
-        m_Texture: {fileID: 2800000, guid: 0b5420a30d93d444f895d35dd3575282, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _VignetteTex:
-        m_Texture: {fileID: 2800000, guid: 00a7e139e9beb9f4b8fe72f63ca78ed9, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _DistortionSrength: 3
-    - _NoiseXSpeed: 10
-    - _NoiseYSpeed: 10
-    - _Strength: 0
-    m_Colors:
-    - _LineColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1113426175
 GameObject:
   m_ObjectHideFlags: 0
@@ -1503,7 +1476,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 1107613036}
+  - {fileID: 995966381}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1785,7 +1758,6 @@ GameObject:
   - component: {fileID: 1414722593}
   - component: {fileID: 1414722592}
   - component: {fileID: 1414722591}
-  - component: {fileID: 1414722590}
   m_Layer: 0
   m_Name: TVCamera
   m_TagString: Untagged
@@ -1793,13 +1765,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1414722590
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1414722589}
-  m_Enabled: 1
 --- !u!124 &1414722591
 Behaviour:
   m_ObjectHideFlags: 0
@@ -1833,7 +1798,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 202214456}
+  m_TargetTexture: {fileID: 1720717776}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -2036,6 +2001,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: 0}
+--- !u!84 &1720717776
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_Width: 903
+  m_Height: 609
+  m_AntiAliasing: 1
+  m_DepthFormat: 2
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 0
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
 --- !u!1 &1746519515
 GameObject:
   m_ObjectHideFlags: 0
