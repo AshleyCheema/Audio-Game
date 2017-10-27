@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AudioController : MonoBehaviour
 {
+	public static AudioController Instance;
+
 	public GameObject goAudioLis;
 	public GameObject goAudioListners;
 	Transform[] tranAudioListeners;
@@ -11,6 +13,11 @@ public class AudioController : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		if(Instance == null)
+		{
+			Instance = this;
+		}
+
 		tranAudioListeners = new Transform[goAudioListners.transform.childCount];
 		for ( int i = 0; i < goAudioListners.transform.childCount; ++i )
 		{
@@ -36,7 +43,7 @@ public class AudioController : MonoBehaviour
 		}
 	}
 
-	void SetListenerPosition(int a_audioIndex)
+	public void SetListenerPosition(int a_audioIndex)
 	{
 		goAudioLis.transform.SetPositionAndRotation(tranAudioListeners[a_audioIndex].position, Quaternion.identity);
 		ActivateAudioSource(a_audioIndex);

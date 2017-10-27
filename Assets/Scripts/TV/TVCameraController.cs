@@ -16,6 +16,11 @@ public class TVCameraController : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		if(Instance == null)
+		{
+			Instance = this;
+		}
+
 		tranCameraPositions = new Transform[ goCameraPositions.transform.childCount ];
 		for (int i = 0; i < goCameraPositions.transform.childCount; ++i )
 		{

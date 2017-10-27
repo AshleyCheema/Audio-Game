@@ -8,6 +8,9 @@ TagManager:
   - projectile
   - MicButton
   - TVButton
+  - MorseCodeClicker
+  - MorseCodeSend
+  - MorseCodeReset
   layers:
   - Default
   - TransparentFX

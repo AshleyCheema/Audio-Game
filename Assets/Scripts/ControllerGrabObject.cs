@@ -21,6 +21,7 @@
  */
 
 using UnityEngine;
+using System;
 
 public class ControllerGrabObject : MonoBehaviour
 {
@@ -78,11 +79,13 @@ public class ControllerGrabObject : MonoBehaviour
             {
 				if(collidingObject.tag == "MicButton")
 				{
-
+					int pos = ( int )Char.GetNumericValue(collidingObject.gameObject.name.ToCharArray()[7]) - 1;
+					AudioController.Instance.SetListenerPosition(pos);
 				}
 				else if (collidingObject.tag == "TVButton")
 				{
-					TVCameraController.Instance.SetCameraPosition( collidingObject.name.ToCharArray()[ 7 - 1 ] );
+					int pos = ( int )Char.GetNumericValue(collidingObject.gameObject.name.ToCharArray()[7]) - 1;
+					TVCameraController.Instance.SetCameraPosition( pos );
 				}
 				else
 				{
