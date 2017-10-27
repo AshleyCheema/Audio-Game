@@ -76,7 +76,18 @@ public class ControllerGrabObject : MonoBehaviour
         {
             if (collidingObject)
             {
-                GrabObject();
+				if(collidingObject.tag == "MicButton")
+				{
+
+				}
+				else if (collidingObject.tag == "TVButton")
+				{
+					TVCameraController.Instance.SetCameraPosition( collidingObject.name.ToCharArray()[ 7 - 1 ] );
+				}
+				else
+				{
+					GrabObject();
+				}
             }
         }
 

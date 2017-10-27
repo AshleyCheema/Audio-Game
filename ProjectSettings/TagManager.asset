@@ -6,6 +6,8 @@ TagManager:
   tags:
   - FxTemporaire
   - projectile
+  - MicButton
+  - TVButton
   layers:
   - Default
   - TransparentFX

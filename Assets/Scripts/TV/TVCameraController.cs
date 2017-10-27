@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TVCameraController : MonoBehaviour
 {
+	public static TVCameraController Instance;
+
 	public GameObject goTVCamera;
 	public GameObject goTVScreen;
 	public GameObject goCameraPositions;
@@ -52,7 +54,7 @@ public class TVCameraController : MonoBehaviour
 		}
 	}
 
-	void SetCameraPosition(int a_positionIndex)
+	public void SetCameraPosition(int a_positionIndex)
 	{
 		goTVCamera.transform.SetPositionAndRotation(tranCameraPositions[a_positionIndex].position, tranCameraPositions[a_positionIndex].rotation);
 	}
