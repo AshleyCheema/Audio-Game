@@ -120,8 +120,11 @@ public class MorseCodeInput : MonoBehaviour
 		{
 			returnString = returnString + _values[i].ToString();
 		}
-
-		if(returnString ==  "-.---")
+		if ( ( returnString == "-.--...." ) )
+		{
+			_morseCodeText.GetComponent<Text>().text = "Code: " + returnString + " string is Yes";
+		}
+		else if(returnString ==  "-.---")
 		{
 			_morseCodeText.GetComponent<Text>().text = "Code: " + returnString + " string is NO";
 		}
