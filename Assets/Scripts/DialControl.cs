@@ -20,6 +20,7 @@ public class DialControl : MonoBehaviour
 
 	private float _lastZ;
 	private bool _triggerDown;
+	private float _range = 20;
 
 	void Awake()
 	{
@@ -64,61 +65,93 @@ public class DialControl : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		//if ( Controller.GetHairTrigger() )
+		if ( Controller.GetHairTrigger() )
+		{
+		if ( collidingObject )
+		{
+			if ( collidingObject.tag == "Dial" )
+			{
+				if ( AudioController.Instance.DialWithInRange(gameObject.transform.rotation.eulerAngles.z))
+				{
+
+				}
+			}
+		}
+		}
+		if ( _hasTicked )
+		{
+			_hasTicked = false;
+			_rot = gameObject.transform.rotation.eulerAngles;
+		}
+
+		//if ( Controller.GetHairTriggerDown() )
 		//{
-		//if ( collidingObject )
-		//{
-		//	if ( collidingObject.tag == "Dial" )
+		//	if ( collidingObject )
 		//	{
-		//		if ( collidingObject.transform.rotation.eulerAngles.z + 40 < gameObject.transform.rotation.eulerAngles.z )
+		//		if ( collidingObject.tag == "Dial" )
 		//		{
-		//			_hasTicked = true;
-		//			Debug.Log("Rotate Right");
-		//			collidingObject.transform.rotation *= Quaternion.Euler(65, 0, 0);
-		//			Controller.TriggerHapticPulse();
+		//			_lastZ = gameObject.transform.rotation.eulerAngles.z;
+		//
+		//			_triggerDown = true;
 		//		}
 		//	}
 		//}
-		//}
-		//if ( _hasTicked )
+		//
+		//if(Controller.GetHairTriggerUp())
 		//{
-		//	_hasTicked = false;
-		//	_rot = gameObject.transform.rotation.eulerAngles;
+		//	_triggerDown = false;
 		//}
-
-		if ( Controller.GetHairTriggerDown() )
-		{
-			if ( collidingObject )
-			{
-				if ( collidingObject.tag == "Dial" )
-				{
-					_lastZ = gameObject.transform.rotation.eulerAngles.z;
-
-					_triggerDown = true;
-				}
-			}
-		}
-
-		if(Controller.GetHairTriggerUp())
-		{
-			_triggerDown = false;
-		}
-
-		if( _triggerDown )
-		{
-			if ( collidingObject )
-			{
-				if ( collidingObject.tag == "Dial" )
-				{
-					if ( gameObject.transform.rotation.eulerAngles.z > _lastZ + 120 )
-					{
-						collidingObject.transform.rotation *= Quaternion.Euler(40, 0, 0);
-
-						_lastZ = gameObject.transform.rotation.eulerAngles.z;
-					}
-				}
-			}
-		}
+		//
+		//if( _triggerDown )
+		//{
+		//	if ( collidingObject )
+		//	{
+		//		if ( collidingObject.tag == "Dial" )
+		//		{
+		//			if ( gameObject.transform.rotation.eulerAngles.z > _lastZ + 120 )
+		//			{
+		//				collidingObject.transform.rotation *= Quaternion.Euler(40, 0, 0);
+		//
+		//				_lastZ = gameObject.transform.rotation.eulerAngles.z;
+		//			}
+		//		}
+		//	}
+		//}
 	}
-	
+
+	bool WithInRange( float a_float)
+	{
+		float min = a_float - _range;
+		if(min < 0)
+		{
+			min = 360 + min;
+		}
+
+		float max = a_float + _range;
+		if(max > 360)
+		{
+			max = max - 360;
+		}
+
+		if(GetDialRotation(gameObject.transform.rotation.eulerAngles.x ) > min && 
+			GetDialRotation( gameObject.transform.rotation.eulerAngles.x ) < max )
+		{
+			return true;
+		}
+
+		return false;
+	}
+
+	public float GetDialRotation(float a_float)
+	{
+		float f = 360;
+
+		if ( Mathf.Sign( a_float ) == -1 )
+		{
+			f += a_float;
+		}
+
+		return f;
+	}
+
 }
