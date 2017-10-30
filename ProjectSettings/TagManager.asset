@@ -11,6 +11,9 @@ TagManager:
   - MorseCodeClicker
   - MorseCodeSend
   - MorseCodeReset
+  - DeskHandle
+  - DrawCheck
+  - Dial
   layers:
   - Default
   - TransparentFX

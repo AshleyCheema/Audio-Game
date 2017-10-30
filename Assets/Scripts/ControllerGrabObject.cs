@@ -35,10 +35,14 @@ public class ControllerGrabObject : MonoBehaviour
         get { return SteamVR_Controller.Input((int)trackedObj.index); }
     }
 
+	private Outline _outline;
+
     void Awake()
     {
         trackedObj = GetComponent<SteamVR_TrackedObject>();
-    }
+		_outline = GetComponent<Outline>();
+
+	}
 
 
     public void OnTriggerEnter(Collider other)
@@ -59,7 +63,7 @@ public class ControllerGrabObject : MonoBehaviour
         }
 
         collidingObject = null;
-    }
+	}
 
     private void SetCollidingObject(Collider col)
     {
@@ -69,7 +73,8 @@ public class ControllerGrabObject : MonoBehaviour
         }
 
         collidingObject = col.gameObject;
-    }
+
+	}
 
     void Update()
     {
@@ -86,6 +91,10 @@ public class ControllerGrabObject : MonoBehaviour
 				{
 					int pos = ( int )Char.GetNumericValue(collidingObject.gameObject.name.ToCharArray()[7]) - 1;
 					TVCameraController.Instance.SetCameraPosition( pos );
+				}
+				else if(collidingObject.tag == "DeskHandle")
+				{
+					GrabObject();
 				}
 				else
 				{
