@@ -1,10 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DrawCheck : MonoBehaviour
 {
-	Vector3 _position;
+	private Vector3 _position;
+	private Rigidbody _rb;
+
+	private void Awake()
+	{
+		_rb = GetComponentInParent<Rigidbody>();
+	}
 
 	private void OnTriggerEnter( Collider other )
 	{
@@ -25,5 +32,16 @@ public class DrawCheck : MonoBehaviour
 		{
 			gameObject.transform.parent.position = _position;
 		}
+	}
+
+	private void Update()
+	{
+		if(_rb.velocity.z < 0.1f && _rb.velocity.z > -0.1f)
+		{
+			_rb.velocity = new Vector3(0, 0, 0);
+		}
+
+		GameObject.Find("MorseCodeText").GetComponent<Text>().text = _rb.velocity.z.ToString();
+
 	}
 }

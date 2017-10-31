@@ -13,6 +13,10 @@ public class AudioController : MonoBehaviour
 	public GameObject goDial;
 	private float[] _dialRotation;
 	private int _dialIndex;
+	public int DialIndex
+	{
+		get { return _dialIndex; }
+	}
 	private float _rotateAmount;
 
 	// Use this for initialization
@@ -29,7 +33,7 @@ public class AudioController : MonoBehaviour
 		_dialIndex = 0;
 		_rotateAmount = 240;
 		_rotateAmount /= _dialRotation.Length;
-		Debug.Log( _rotateAmount );
+		//Debug.Log( _rotateAmount );
 
 		for ( int i = 0; i < goAudioListners.transform.childCount; ++i )
 		{
@@ -46,11 +50,12 @@ public class AudioController : MonoBehaviour
 			}
 		}
 
-		goDial.transform.rotation.eulerAngles.Set( _dialRotation[ _dialIndex ], 0.0f, 0.0f );
+		Quaternion newRot = Quaternion.Euler(_dialRotation[_dialIndex], 90, 0);
+		goDial.transform.rotation = newRot;
 
 		foreach ( float f in _dialRotation )
 		{
-			Debug.Log( f );
+		//	Debug.Log( f );
 		}
 	}
 
@@ -60,6 +65,9 @@ public class AudioController : MonoBehaviour
 		if ( Input.GetKeyDown( KeyCode.Alpha1 ) )
 		{
 			SetListenerPosition( 0 );
+
+			Quaternion newRot = Quaternion.Euler(_dialRotation[3], 90, 0);
+			goDial.transform.rotation = newRot;
 		}
 		if ( Input.GetKeyDown( KeyCode.Alpha2 ) )
 		{
@@ -79,34 +87,42 @@ public class AudioController : MonoBehaviour
 
 	public bool DialWithInRange( float a_float )
 	{
-		float controller = ConvertRotationFloat( a_float );
+		float controller = ConvertRotationFloat( a_float * -1 );
+
 		if ( _dialIndex == 0 )
 		{
 			float min = ConvertRotationFloat( _dialRotation[ _dialIndex + 1] ) - 20;
 			ConvertRotationFloat( min );
-			float max = ConvertRotationFloat( _dialRotation[ -_dialIndex + 1] ) + 20;
+			float max = ConvertRotationFloat( _dialRotation[ _dialIndex + 1] ) + 20;
 			ConvertRotationFloat( max );
 
 			// only check for position 1
-			if ( controller > min && controller < max )
+			if ( AngleBetween(controller, min, max) )
 			{
 				_dialIndex++;
+
+				Quaternion newRot = Quaternion.Euler(_dialRotation[_dialIndex], 90, 0);
+				goDial.transform.rotation = newRot;
+
 				return true;
 			}
 
 		}
 		else if ( _dialIndex == _dialRotation.Length - 1 )
 		{
-			float min = ConvertRotationFloat( _dialRotation[ _dialIndex -1 ] ) - 20;
+			float min = ConvertRotationFloat( _dialRotation[ _dialIndex - 2 ] ) - 20;
 			ConvertRotationFloat( min );
-			float max = ConvertRotationFloat( _dialRotation[ -_dialIndex - 1 ] ) + 20;
+			float max = ConvertRotationFloat( _dialRotation[ _dialIndex - 2 ] ) + 20;
 			ConvertRotationFloat( max );
 			// check for the second to last position
 
 			if ( AngleBetween(controller, min, max ))
 			{
-
 				_dialIndex--;
+
+				Quaternion newRot = Quaternion.Euler(_dialRotation[_dialIndex], 90, 0);
+				goDial.transform.rotation = newRot;
+
 				return true;
 			}
 		}
@@ -114,12 +130,16 @@ public class AudioController : MonoBehaviour
 		{
 			float min = ConvertRotationFloat( _dialRotation[ _dialIndex + 1 ] ) - 20;
 			ConvertRotationFloat( min );
-			float max = ConvertRotationFloat( _dialRotation[ -_dialIndex + 1 ] ) + 20;
+			float max = ConvertRotationFloat( _dialRotation[ _dialIndex + 1 ] ) + 20;
 			ConvertRotationFloat( max );
 			// one above
-			if ( controller > min && controller < max )
+			if ( AngleBetween(controller, min, max) )
 			{
 				_dialIndex++;
+
+				Quaternion newRot = Quaternion.Euler(_dialRotation[_dialIndex], 90, 0);
+				goDial.transform.rotation = newRot;
+
 				return true;
 			}
 
@@ -128,9 +148,13 @@ public class AudioController : MonoBehaviour
 			max = ConvertRotationFloat( _dialRotation[ _dialIndex - 1 ] ) + 20;
 			ConvertRotationFloat( max );
 			// one below
-			if ( controller > min && controller < max )
+			if ( AngleBetween(controller, min, max) )
 			{
 				_dialIndex--;
+
+				Quaternion newRot = Quaternion.Euler(_dialRotation[_dialIndex], 90, 0);
+				goDial.transform.rotation = newRot;
+
 				return true;
 			}
 		}
@@ -148,6 +172,10 @@ public class AudioController : MonoBehaviour
 		else
 		{
 			f = a_float;
+			if(f >= 360)
+			{
+				f -= 360;
+			}
 		}
 		return f;
 	}

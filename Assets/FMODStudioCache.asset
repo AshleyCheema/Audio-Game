@@ -13,14 +13,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114199472407122216}
-  - {fileID: 114699872855888426}
+  - {fileID: 114881682501270098}
   EditorEvents:
   - {fileID: 114099871629968850}
   - {fileID: 114960063704821552}
   - {fileID: 114509722907724504}
-  MasterBankRef: {fileID: 114699872855888426}
+  MasterBankRef: {fileID: 114881682501270098}
   StringsBankRef: {fileID: 114199472407122216}
-  stringsBankWriteTime: 636446449529251660
+  stringsBankWriteTime: 636438376659654116
   cacheVersion: 2
 --- !u!114 &114099871629968850
 MonoBehaviour:
@@ -36,7 +36,7 @@ MonoBehaviour:
   Path: snapshot:/New Snapshot
   guid: 06b71abdb77a284398769ca85d0aa725
   Banks:
-  - {fileID: 114699872855888426}
+  - {fileID: 114881682501270098}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -55,7 +55,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\FMOD Audio\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636446449529251660
+  lastModified: 636438376659654116
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -75,7 +75,7 @@ MonoBehaviour:
   Path: event:/Talking
   guid: ebbd59bb48b3a74581b39850e7cf9edc
   Banks:
-  - {fileID: 114699872855888426}
+  - {fileID: 114881682501270098}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -119,6 +119,24 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1979328
   Exists: 1
+--- !u!114 &114881682501270098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: N:\GitHub\Audio-Game\Assets\FMOD Audio\Build\Desktop\Master Bank.bank
+  lastModified: 636438376659497871
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1979328
+  Exists: 1
 --- !u!114 &114960063704821552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,7 +151,7 @@ MonoBehaviour:
   Path: event:/Wind
   guid: b15d9186a6a1934ba60adf97fd28f9bf
   Banks:
-  - {fileID: 114699872855888426}
+  - {fileID: 114881682501270098}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0

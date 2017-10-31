@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialControl : MonoBehaviour
 {
@@ -73,7 +74,10 @@ public class DialControl : MonoBehaviour
 			{
 				if ( AudioController.Instance.DialWithInRange(gameObject.transform.rotation.eulerAngles.z))
 				{
+						GameObject.Find("MorseCodeText").GetComponent<Text>().text = AudioController.Instance.DialIndex.ToString();
+						AudioController.Instance.SetListenerPosition(AudioController.Instance.DialIndex);
 
+						Controller.TriggerHapticPulse();
 				}
 			}
 		}
@@ -83,40 +87,6 @@ public class DialControl : MonoBehaviour
 			_hasTicked = false;
 			_rot = gameObject.transform.rotation.eulerAngles;
 		}
-
-		//if ( Controller.GetHairTriggerDown() )
-		//{
-		//	if ( collidingObject )
-		//	{
-		//		if ( collidingObject.tag == "Dial" )
-		//		{
-		//			_lastZ = gameObject.transform.rotation.eulerAngles.z;
-		//
-		//			_triggerDown = true;
-		//		}
-		//	}
-		//}
-		//
-		//if(Controller.GetHairTriggerUp())
-		//{
-		//	_triggerDown = false;
-		//}
-		//
-		//if( _triggerDown )
-		//{
-		//	if ( collidingObject )
-		//	{
-		//		if ( collidingObject.tag == "Dial" )
-		//		{
-		//			if ( gameObject.transform.rotation.eulerAngles.z > _lastZ + 120 )
-		//			{
-		//				collidingObject.transform.rotation *= Quaternion.Euler(40, 0, 0);
-		//
-		//				_lastZ = gameObject.transform.rotation.eulerAngles.z;
-		//			}
-		//		}
-		//	}
-		//}
 	}
 
 	bool WithInRange( float a_float)
