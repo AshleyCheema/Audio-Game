@@ -31,7 +31,7 @@ public class AudioController : MonoBehaviour
 		_dialRotation = new float[ goAudioListners.transform.childCount ];
 
 		_dialIndex = 0;
-		_rotateAmount = 240;
+		_rotateAmount = 180;
 		_rotateAmount /= _dialRotation.Length;
 		//Debug.Log( _rotateAmount );
 
